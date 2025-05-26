@@ -96,6 +96,7 @@
               "fade-in": "fadeIn 0.8s ease-in-out",
               "slide-up": "slideUp 0.6s ease-out",
               float: "float 3s ease-in-out infinite",
+              "float-mobile": "floatMobile 3s ease-in-out infinite",
             },
             keyframes: {
               fadeIn: {
@@ -109,6 +110,10 @@
               float: {
                 "0%, 100%": { transform: "translateY(0px)" },
                 "50%": { transform: "translateY(-10px)" },
+              },
+              floatMobile: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-5px)" },
               },
             },
           },
@@ -190,12 +195,12 @@
     </header>
 
     <section
-      class="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+      class="min-h-screen flex items-center justify-center px-6 pt-24 md:pt-0 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
     >
       <div class="text-center max-w-4xl mx-auto animate-fade-in">
-        <div class="mb-8 animate-float">
+        <div class="mb-8 animate-float-mobile sm:animate-float">
           <div
-            class="w-32 h-32 mx-auto bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl"
+            class="w-24 h-24 sm:w-32 sm:h-32 mx-auto bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-2xl sm:text-4xl font-bold shadow-2xl"
           >
             ML
           </div>
