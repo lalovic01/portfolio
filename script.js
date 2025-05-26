@@ -28,6 +28,17 @@ mobileNavLinks.forEach((link) => {
   });
 });
 
+document.addEventListener("click", (e) => {
+  if (
+    mobileMenu &&
+    !mobileMenu.classList.contains("hidden") &&
+    !e.target.closest("#mobileMenu") &&
+    !e.target.closest("#mobileMenuBtn")
+  ) {
+    mobileMenu.classList.add("hidden");
+  }
+});
+
 window.addEventListener("scroll", () => {
   if (window.pageYOffset > 300) {
     scrollToTopBtn.classList.remove("opacity-0", "invisible");
