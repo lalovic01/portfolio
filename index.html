@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO Meta Tags -->
+    <title>Mladen Lalović | Frontend Developer</title>
+    <meta
+      name="description"
+      content="Frontend Developer specializing in Drupal, JavaScript, and modern web technologies. Creating user-oriented web solutions with HTML, CSS, React, and CRM systems. Based in Belgrade, Serbia."
+    />
+    <meta
+      name="keywords"
+      content="Frontend Developer, Web Developer, Drupal Developer, JavaScript, HTML, CSS, React, CRM, Belgrade, Serbia, Web Design, UI/UX, Responsive Design"
+    />
+    <meta name="author" content="Mladen Lalović" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets\favicon.ico" />
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="style.css" as="style" />
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      as="style"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com" />
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://mladenlalovic.dev/" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Mladen Lalović",
+        "jobTitle": "Frontend Developer",
+        "description": "Frontend Developer specializing in Drupal, JavaScript, and modern web technologies",
+        "url": "https://mladenlalovic.dev",
+        "email": "mladenlalovic01@gmail.com",
+        "telephone": "+381641481608",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Belgrade",
+          "addressCountry": "Serbia"
+        },
+        "alumniOf": [
+          {
+            "@type": "EducationalOrganization",
+            "name": "Academy of Applied Studies, Belgrade"
+          },
+          {
+            "@type": "EducationalOrganization",
+            "name": "College of Applied Studies in Engineering and Management"
+          }
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Catalyst Balkans"
+        },
+        "knowsAbout": [
+          "Frontend Development",
+          "Drupal",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "React",
+          "CRM Systems",
+          "Web Development"
+        ],
+        "sameAs": [
+          "https://github.com/lalovic01",
+          "https://linkedin.com/in/mladen-lalovic"
+        ]
+      }
+    </script>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            animation: {
+              "fade-in": "fadeIn 0.8s ease-in-out",
+              "slide-up": "slideUp 0.6s ease-out",
+              float: "float 3s ease-in-out infinite",
+            },
+            keyframes: {
+              fadeIn: {
+                "0%": { opacity: "0" },
+                "100%": { opacity: "1" },
+              },
+              slideUp: {
+                "0%": { opacity: "0", transform: "translateY(30px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-10px)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white font-sans transition-colors duration-300"
+  >
+    <header
+      class="fixed w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-md z-50 transition-all duration-300 shadow-sm"
+    >
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <h1
+            class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent"
+          >
+            Mladen Lalović
+          </h1>
+
+          <nav class="hidden md:flex space-x-8">
+            <a
+              href="#skills"
+              class="nav-link hover:text-orange-500 transition-colors duration-300"
+              >Skills</a
+            >
+            <a
+              href="#projects"
+              class="nav-link hover:text-orange-500 transition-colors duration-300"
+              >Projects</a
+            >
+            <a
+              href="#experience"
+              class="nav-link hover:text-orange-500 transition-colors duration-300"
+              >Experience</a
+            >
+            <a
+              href="#contact"
+              class="nav-link hover:text-orange-500 transition-colors duration-300"
+              >Contact</a
+            >
+          </nav>
+
+          <div class="flex items-center space-x-4">
+            <button
+              id="darkToggle"
+              class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300"
+            >
+              <i class="fas fa-moon dark:hidden"></i>
+              <i class="fas fa-sun hidden dark:block"></i>
+            </button>
+
+            <button
+              id="mobileMenuBtn"
+              class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+          </div>
+        </div>
+
+        <nav
+          id="mobileMenu"
+          class="md:hidden hidden mt-4 pb-4 border-t dark:border-gray-700"
+        >
+          <div class="flex flex-col space-y-3 mt-4">
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#experience" class="mobile-nav-link">Experience</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section
+      class="min-h-screen flex items-center justify-center px-6 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"
+    >
+      <div class="text-center max-w-4xl mx-auto animate-fade-in">
+        <div class="mb-8 animate-float">
+          <div
+            class="w-32 h-32 mx-auto bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center text-white text-4xl font-bold shadow-2xl"
+          >
+            ML
+          </div>
+        </div>
+
+        <h1
+          id="heroTitle"
+          class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent opacity-0"
+        ></h1>
+
+        <p class="text-2xl md:text-3xl text-orange-500 font-semibold mb-6">
+          Frontend Developer
+        </p>
+
+        <p
+          class="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed"
+        >
+          Passionate developer dedicated to creating user-oriented web solutions
+          using modern technologies and tools. Specialized in Drupal platform
+          and frontend development.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#projects" class="btn-primary group hero-btn-primary">
+            <span class="relative z-10">View Projects</span>
+            <i
+              class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform duration-300 relative z-10"
+            ></i>
+            <div class="btn-glow"></div>
+          </a>
+          <a href="#contact" class="btn-secondary group hero-btn-secondary">
+            <span class="relative z-10">Contact</span>
+            <i
+              class="fas fa-envelope ml-2 relative z-10 group-hover:rotate-12 transition-transform duration-300"
+            ></i>
+            <div class="btn-ripple"></div>
+          </a>
+        </div>
+
+        <div class="flex justify-center space-x-6 mt-12">
+          <a
+            href="https://github.com/lalovic01"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github text-2xl"></i>
+          </a>
+          <a href="mailto:mladenlalovic01@gmail.com" class="social-link">
+            <i class="fas fa-envelope text-2xl"></i>
+          </a>
+          <a href="#" class="social-link">
+            <i class="fab fa-linkedin text-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="py-20 px-6 bg-gray-50 dark:bg-gray-800/50">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Current Technologies</h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto mb-6"
+          ></div>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            I'm proficient in a range of modern technologies that empower me to
+            build highly functional solutions. These are some of my main
+            technologies.
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+        >
+          <button class="skill-button group" data-skill="HTML">
+            <i
+              class="fab fa-html5 text-3xl text-orange-600 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">HTML</span>
+          </button>
+
+          <button class="skill-button group" data-skill="CSS">
+            <i
+              class="fab fa-css3-alt text-3xl text-blue-600 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">CSS</span>
+          </button>
+
+          <button class="skill-button group" data-skill="JavaScript">
+            <i
+              class="fab fa-js-square text-3xl text-yellow-500 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">JavaScript</span>
+          </button>
+
+          <button class="skill-button group" data-skill="Tailwind">
+            <i
+              class="fas fa-wind text-3xl text-cyan-500 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">Tailwind</span>
+          </button>
+
+          <button class="skill-button group" data-skill="jQuery">
+            <i
+              class="fas fa-code text-3xl text-blue-700 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">jQuery</span>
+          </button>
+
+          <button class="skill-button group" data-skill="Bootstrap">
+            <i
+              class="fab fa-bootstrap text-3xl text-purple-600 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">Bootstrap</span>
+          </button>
+
+          <button class="skill-button group" data-skill="Git">
+            <i
+              class="fab fa-git-alt text-3xl text-red-600 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">Git</span>
+          </button>
+
+          <button class="skill-button group" data-skill="GitHub">
+            <i
+              class="fab fa-github text-3xl text-gray-800 dark:text-white group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">GitHub</span>
+          </button>
+
+          <button class="skill-button group" data-skill="WordPress">
+            <i
+              class="fab fa-wordpress text-3xl text-blue-800 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">WordPress</span>
+          </button>
+
+          <button class="skill-button group" data-skill="Photoshop">
+            <i
+              class="fas fa-palette text-3xl text-blue-600 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">Photoshop</span>
+          </button>
+
+          <button class="skill-button group" data-skill="SQL">
+            <i
+              class="fas fa-database text-3xl text-green-600 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">SQL</span>
+          </button>
+
+          <button class="skill-button group" data-skill="Drupal">
+            <i
+              class="fab fa-drupal text-3xl text-blue-700 group-hover:scale-110 transition-transform mb-2"
+            ></i>
+            <span class="text-sm font-semibold">Drupal</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="py-20 px-6">
+      <div class="container mx-auto max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Projects</h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto mb-6"
+          ></div>
+          <p class="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Explore my recent work and projects that showcase my skills and
+            experience in frontend development and modern web technologies.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="projects-slider-container overflow-hidden rounded-xl">
+            <div
+              id="projectsSlider"
+              class="projects-slider flex transition-transform duration-500 ease-in-out"
+            >
+              <div
+                class="project-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+              >
+                <div class="project-card group h-full">
+                  <div class="relative overflow-hidden rounded-t-xl">
+                    <div
+                      class="w-full h-48 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-900/30 dark:to-blue-800/30 flex items-center justify-center"
+                    >
+                      <i class="fas fa-leaf text-4xl text-green-600"></i>
+                    </div>
+                    <div
+                      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    >
+                      <div class="flex space-x-4">
+                        <a
+                          href="https://github.com/lalovic01"
+                          target="_blank"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                          href="#"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-6 flex-1">
+                    <h3 class="text-xl font-bold mb-3">
+                      Endangered Species Website
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                      Responsive website about endangered species with location
+                      display and statistics. Focus on education and raising
+                      awareness about nature conservation.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="tech-tag">HTML</span>
+                      <span class="tech-tag">CSS</span>
+                      <span class="tech-tag">JavaScript</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="project-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+              >
+                <div class="project-card group h-full">
+                  <div class="relative overflow-hidden rounded-t-xl">
+                    <div
+                      class="w-full h-48 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-900/30 dark:to-purple-800/30 flex items-center justify-center"
+                    >
+                      <i class="fas fa-chart-bar text-4xl text-purple-600"></i>
+                    </div>
+                    <div
+                      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    >
+                      <div class="flex space-x-4">
+                        <a
+                          href="https://github.com/lalovic01"
+                          target="_blank"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                          href="#"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-6 flex-1">
+                    <h3 class="text-xl font-bold mb-3">CRM Dashboard</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                      Internal CRM system for client management with analytics
+                      dashboard and automated workflows.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="tech-tag">Drupal</span>
+                      <span class="tech-tag">SQL</span>
+                      <span class="tech-tag">API</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="project-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+              >
+                <div class="project-card group h-full">
+                  <div class="relative overflow-hidden rounded-t-xl">
+                    <div
+                      class="w-full h-48 bg-gradient-to-br from-green-100 to-green-200 dark:from-green-900/30 dark:to-green-800/30 flex items-center justify-center"
+                    >
+                      <i class="fas fa-mobile-alt text-4xl text-green-600"></i>
+                    </div>
+                    <div
+                      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    >
+                      <div class="flex space-x-4">
+                        <a
+                          href="https://github.com/lalovic01"
+                          target="_blank"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                          href="#"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-6 flex-1">
+                    <h3 class="text-xl font-bold mb-3">Responsive Web Forms</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                      Collection of advanced web forms with validation,
+                      conditional fields and integration with various API
+                      services.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="tech-tag">Webform</span>
+                      <span class="tech-tag">jQuery</span>
+                      <span class="tech-tag">Validation</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="project-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+              >
+                <div class="project-card group h-full">
+                  <div class="relative overflow-hidden rounded-t-xl">
+                    <div
+                      class="w-full h-48 bg-gradient-to-br from-red-100 to-red-200 dark:from-red-900/30 dark:to-red-800/30 flex items-center justify-center"
+                    >
+                      <i class="fas fa-shopping-cart text-4xl text-red-600"></i>
+                    </div>
+                    <div
+                      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    >
+                      <div class="flex space-x-4">
+                        <a
+                          href="https://github.com/lalovic01"
+                          target="_blank"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                          href="#"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-6 flex-1">
+                    <h3 class="text-xl font-bold mb-3">E-commerce Platform</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                      Modern e-commerce solution with shopping cart, payment
+                      integration, and inventory management system.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="tech-tag">React</span>
+                      <span class="tech-tag">Node.js</span>
+                      <span class="tech-tag">Stripe</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="project-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+              >
+                <div class="project-card group h-full">
+                  <div class="relative overflow-hidden rounded-t-xl">
+                    <div
+                      class="w-full h-48 bg-gradient-to-br from-yellow-100 to-yellow-200 dark:from-yellow-900/30 dark:to-yellow-800/30 flex items-center justify-center"
+                    >
+                      <i class="fas fa-calendar text-4xl text-yellow-600"></i>
+                    </div>
+                    <div
+                      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    >
+                      <div class="flex space-x-4">
+                        <a
+                          href="https://github.com/lalovic01"
+                          target="_blank"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                          href="#"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-6 flex-1">
+                    <h3 class="text-xl font-bold mb-3">Event Management App</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                      Comprehensive event planning and management application
+                      with calendar integration and notification system.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="tech-tag">Vue.js</span>
+                      <span class="tech-tag">Firebase</span>
+                      <span class="tech-tag">PWA</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="project-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4"
+              >
+                <div class="project-card group h-full">
+                  <div class="relative overflow-hidden rounded-t-xl">
+                    <div
+                      class="w-full h-48 bg-gradient-to-br from-indigo-100 to-indigo-200 dark:from-indigo-900/30 dark:to-indigo-800/30 flex items-center justify-center"
+                    >
+                      <i class="fas fa-code text-4xl text-indigo-600"></i>
+                    </div>
+                    <div
+                      class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    >
+                      <div class="flex space-x-4">
+                        <a
+                          href="https://github.com/lalovic01"
+                          target="_blank"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fab fa-github"></i>
+                        </a>
+                        <a
+                          href="#"
+                          class="text-white hover:text-orange-400 text-xl"
+                        >
+                          <i class="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="p-6 flex-1">
+                    <h3 class="text-xl font-bold mb-3">
+                      Code Editor Extension
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                      VS Code extension for enhanced productivity with custom
+                      themes, snippets, and development tools.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="tech-tag">TypeScript</span>
+                      <span class="tech-tag">VS Code API</span>
+                      <span class="tech-tag">Node.js</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            id="prevBtn"
+            class="slider-nav-btn slider-nav-prev absolute left-4 top-1/2 transform -translate-y-1/2 z-10"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button
+            id="nextBtn"
+            class="slider-nav-btn slider-nav-next absolute right-4 top-1/2 transform -translate-y-1/2 z-10"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+
+          <div class="flex justify-center mt-8 space-x-2">
+            <button class="slider-dot active" data-slide="0"></button>
+            <button class="slider-dot" data-slide="1"></button>
+            <button class="slider-dot" data-slide="2"></button>
+            <button class="slider-dot" data-slide="3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="py-20 px-6 bg-gray-50 dark:bg-gray-800/50">
+      <div class="container mx-auto max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Experience & Education</h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto mb-8"
+          ></div>
+
+          <div class="flex justify-center mb-8">
+            <div
+              class="bg-white dark:bg-gray-700 p-1 rounded-full shadow-lg border border-gray-200 dark:border-gray-600 inline-flex"
+            >
+              <button
+                id="workTab"
+                class="tab-button active px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
+              >
+                <i class="fas fa-briefcase"></i>
+                <span class="hidden sm:inline">Work Experience</span>
+                <span class="sm:hidden">Work</span>
+              </button>
+              <button
+                id="educationTab"
+                class="tab-button px-4 sm:px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
+              >
+                <i class="fas fa-graduation-cap"></i>
+                <span class="hidden sm:inline">Education</span>
+                <span class="sm:hidden">Education</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative min-h-[400px]">
+          <div id="workContent" class="tab-content active">
+            <div class="space-y-8">
+              <div class="experience-card animate-slide-in">
+                <div
+                  class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+                >
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                      Frontend Developer
+                    </h3>
+                    <p class="text-orange-500 font-semibold">
+                      Catalyst Balkans
+                    </p>
+                  </div>
+                  <span
+                    class="text-sm text-gray-500 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full mt-2 md:mt-0"
+                  >
+                    March 2024 – Present
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Creating and optimizing Webforms, UI components, form
+                  validation, API integration, working with Drupal platform.
+                  Focus on user experience and web application performance.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="skill-tag">Drupal</span>
+                  <span class="skill-tag">Webforms</span>
+                  <span class="skill-tag">API Integration</span>
+                  <span class="skill-tag">UI/UX</span>
+                </div>
+              </div>
+
+              <div class="experience-card animate-slide-in">
+                <div
+                  class="flex flex-col md:flex-row md:items-center md:justify-between mb-4"
+                >
+                  <div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                      CRM Coordinator
+                    </h3>
+                    <p class="text-orange-500 font-semibold">
+                      Catalyst Balkans
+                    </p>
+                  </div>
+                  <span
+                    class="text-sm text-gray-500 bg-gray-200 dark:bg-gray-700 px-3 py-1 rounded-full mt-2 md:mt-0"
+                  >
+                    April 2023 – March 2024
+                  </span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  Implementation and support of CRM systems, creating
+                  integrations, business process automation, SQL analysis and
+                  user training. Database management and reporting.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                  <span class="skill-tag">CRM</span>
+                  <span class="skill-tag">SQL</span>
+                  <span class="skill-tag">Automation</span>
+                  <span class="skill-tag">Training</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="educationContent" class="tab-content">
+            <div class="space-y-6">
+              <div class="education-card animate-slide-in">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-graduation-cap text-white"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold mb-2">
+                      Master's Degree – Computer Science
+                    </h3>
+                    <p class="text-orange-500 font-semibold mb-2">
+                      Academy of Applied Studies, Belgrade
+                    </p>
+                    <p class="text-gray-500 text-sm mb-3">2023 – Present</p>
+                    <p
+                      class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"
+                    >
+                      Advanced studies in computer science with focus on modern
+                      software development methodologies, algorithms, and system
+                      architecture.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="education-card animate-slide-in">
+                <div class="flex items-start space-x-4">
+                  <div
+                    class="flex-shrink-0 w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center"
+                  >
+                    <i class="fas fa-graduation-cap text-white"></i>
+                  </div>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold mb-2">
+                      Bachelor's Degree – New Computer Technologies
+                    </h3>
+                    <p class="text-orange-500 font-semibold mb-2">
+                      College of Applied Studies in Engineering and Management
+                    </p>
+                    <p class="text-gray-500 text-sm mb-3">2020 – 2023</p>
+                    <p
+                      class="text-gray-600 dark:text-gray-300 text-sm leading-relaxed"
+                    >
+                      Comprehensive education in modern computer technologies,
+                      programming languages, web development, and software
+                      engineering principles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6 bg-gray-50 dark:bg-gray-800/50">
+      <div class="container mx-auto max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="section-title">Contact</h2>
+          <div
+            class="w-24 h-1 bg-gradient-to-r from-orange-500 to-red-500 mx-auto"
+          ></div>
+          <p class="text-gray-600 dark:text-gray-300 mt-4">
+            Interested in collaboration? Send me a message!
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <form id="contactForm" class="space-y-6">
+              <div>
+                <label class="block text-sm font-semibold mb-2">Name *</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="form-input"
+                  placeholder="Your name"
+                  required
+                />
+                <div class="error-message hidden" id="nameError">
+                  Name is required
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold mb-2">Email *</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="form-input"
+                  placeholder="your@email.com"
+                  required
+                />
+                <div class="error-message hidden" id="emailError">
+                  Please enter a valid email address
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-semibold mb-2"
+                  >Message *</label
+                >
+                <textarea
+                  id="message"
+                  rows="5"
+                  class="form-input"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+                <div class="error-message hidden" id="messageError">
+                  Message is required
+                </div>
+              </div>
+
+              <button type="submit" class="btn-primary w-full group">
+                <span>Send Message</span>
+                <i
+                  class="fas fa-paper-plane ml-2 group-hover:translate-x-1 transition-transform"
+                ></i>
+              </button>
+            </form>
+
+            <div
+              id="formSuccess"
+              class="hidden mt-6 p-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg"
+            >
+              <i class="fas fa-check-circle mr-2"></i>
+              Message sent successfully!
+            </div>
+          </div>
+
+          <div class="space-y-8">
+            <div class="contact-info-card">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-envelope text-white"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Email</h3>
+                  <a
+                    href="mailto:mladenlalovic01@gmail.com"
+                    class="text-orange-500 hover:underline"
+                  >
+                    mladenlalovic01@gmail.com
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="fab fa-github text-white"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">GitHub</h3>
+                  <a
+                    href="https://github.com/lalovic01"
+                    target="_blank"
+                    class="text-orange-500 hover:underline"
+                  >
+                    github.com/lalovic01
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-map-marker-alt text-white"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Location</h3>
+                  <p class="text-gray-600 dark:text-gray-300">
+                    Belgrade, Serbia
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-phone text-white"></i>
+                </div>
+                <div>
+                  <h3 class="font-semibold">Phone</h3>
+                  <a
+                    href="tel:+381641481608"
+                    class="text-orange-500 hover:underline"
+                  >
+                    +381 64 148 16 08
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-6 md:mb-0">
+            <h3
+              class="text-2xl font-bold bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent"
+            >
+              Mladen Lalović
+            </h3>
+            <p class="text-gray-400 mt-2">Frontend Developer</p>
+          </div>
+
+          <div class="flex space-x-6">
+            <a
+              href="https://github.com/lalovic01"
+              target="_blank"
+              class="social-link"
+            >
+              <i class="fab fa-github text-xl"></i>
+            </a>
+            <a href="mailto:mladenlalovic01@gmail.com" class="social-link">
+              <i class="fas fa-envelope text-xl"></i>
+            </a>
+            <a href="#" class="social-link">
+              <i class="fab fa-linkedin text-xl"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+          <p class="text-gray-400">
+            &copy; 2025 Mladen Lalović. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <button
+      id="scrollToTop"
+      class="fixed bottom-6 right-6 w-12 h-12 bg-orange-500 text-white rounded-full shadow-lg hover:bg-orange-600 transition-all duration-300 opacity-0 invisible"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
