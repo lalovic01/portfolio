@@ -67,6 +67,133 @@
   @apply block py-2 text-gray-600 dark:text-gray-300 hover:text-orange-500 transition-colors duration-300;
 }
 
+/* Prevent horizontal scroll globally */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Header responsive fixes */
+header {
+  @apply w-full max-w-full overflow-hidden;
+}
+
+.header-container {
+  @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Navigation responsive fixes */
+.nav-container {
+  @apply flex items-center justify-between w-full max-w-full;
+}
+
+.nav-links {
+  @apply hidden md:flex items-center space-x-8;
+}
+
+.mobile-menu {
+  @apply md:hidden;
+}
+
+/* Logo responsive */
+.logo {
+  @apply flex-shrink-0 max-w-[200px] md:max-w-none;
+}
+
+/* Mobile navigation improvements */
+.mobile-nav {
+  @apply fixed inset-x-0 top-0 z-50 bg-white dark:bg-gray-900 shadow-lg;
+}
+
+.mobile-nav-content {
+  @apply px-4 py-4 space-y-2 max-w-full overflow-hidden;
+}
+
+/* Button responsive fixes */
+.btn-primary,
+.btn-secondary {
+  @apply text-sm sm:text-base px-4 py-2 sm:px-8 sm:py-3;
+}
+
+/* Skill button responsive */
+.skill-button {
+  @apply p-3 sm:p-6 min-h-[100px] sm:min-h-[120px];
+}
+
+/* Tab button responsive */
+.tab-button {
+  @apply px-3 py-2 sm:px-4 sm:py-2 text-sm sm:text-base;
+}
+
+/* Project card responsive */
+.project-card {
+  @apply max-w-full;
+}
+
+.project-image {
+  @apply h-40 sm:h-48;
+}
+
+/* Form responsive */
+.form-input {
+  @apply p-3 sm:p-4 text-sm sm:text-base;
+}
+
+/* Container max-width fixes */
+.container {
+  @apply max-w-full px-4 sm:px-6 lg:px-8;
+}
+
+/* Grid responsive fixes */
+.grid-responsive {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6;
+}
+
+/* Text responsive */
+.section-title {
+  @apply text-2xl sm:text-4xl md:text-5xl;
+}
+
+/* Enhanced mobile breakpoints */
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-secondary {
+    @apply px-3 py-2 text-xs;
+  }
+
+  .skill-button {
+    @apply p-2 min-h-[80px] text-xs;
+  }
+
+  .tab-button {
+    @apply px-2 py-1 text-xs;
+  }
+
+  .section-title {
+    @apply text-xl;
+  }
+
+  .project-image {
+    @apply h-32;
+  }
+}
+
+@media (max-width: 360px) {
+  .container {
+    @apply px-2;
+  }
+
+  .nav-container {
+    @apply px-2;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    @apply px-2 py-1 text-xs;
+  }
+}
+
 /* Custom animations */
 @keyframes pulse-orange {
   0%,
@@ -91,12 +218,6 @@
 /* Smooth scrolling for all browsers */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Prevent horizontal scroll */
-}
-
-body {
-  overflow-x: hidden; /* Prevent horizontal scroll */
-  max-width: 100vw; /* Ensure body doesn't exceed viewport */
 }
 
 /* Custom scrollbar */
@@ -331,194 +452,4 @@ body {
   .slider-nav-next {
     @apply right-0;
   }
-}
-
-/* Container and layout fixes */
-.container {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Header responsive fixes */
-header {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-header .container {
-  padding-left: clamp(1rem, 4vw, 1.5rem);
-  padding-right: clamp(1rem, 4vw, 1.5rem);
-}
-
-/* Navigation responsive fixes */
-@media (max-width: 768px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  header .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  /* Ensure mobile menu doesn't cause overflow */
-  #mobileMenu {
-    width: 100%;
-    max-width: calc(100vw - 2rem);
-    overflow-x: hidden;
-  }
-
-  /* Fix hero section on mobile */
-  section {
-    padding-left: 1rem;
-    padding-right: 1rem;
-    overflow-x: hidden;
-  }
-
-  /* Skill buttons grid responsive fix */
-  .grid {
-    gap: 0.5rem;
-  }
-
-  /* Project slider responsive fix */
-  .projects-slider-container {
-    margin-left: 0;
-    margin-right: 0;
-    overflow-x: hidden;
-  }
-
-  .project-slide {
-    min-width: 0;
-    width: 100%;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-  /* Navigation buttons positioning fix */
-  .slider-nav-prev {
-    left: 0.5rem;
-  }
-
-  .slider-nav-next {
-    right: 0.5rem;
-  }
-}
-
-@media (max-width: 375px) {
-  .container {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  header .container {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  section {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  /* Adjust skill grid for very small screens */
-  .grid.grid-cols-2 {
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-
-  /* Ensure buttons don't overflow */
-  .skill-button {
-    min-width: 0;
-    padding: 1rem 0.5rem;
-  }
-
-  /* Social links responsive */
-  .flex.space-x-6 {
-    gap: 1rem;
-  }
-
-  /* Form responsive */
-  .form-input {
-    padding: 0.75rem;
-  }
-}
-
-/* Text and content responsive fixes */
-@media (max-width: 640px) {
-  /* Prevent text overflow */
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  p {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* Flex containers responsive */
-  .flex.flex-col.sm\\:flex-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .flex.flex-wrap {
-    flex-wrap: wrap;
-  }
-}
-
-/* Ensure all sections respect viewport */
-section {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-/* Fix any potential overflow from gradients or animations */
-* {
-  box-sizing: border-box;
-}
-
-/* Additional mobile navigation fixes */
-@media (max-width: 768px) {
-  .mobile-nav-link {
-    padding: 0.5rem 0;
-    word-wrap: break-word;
-  }
-
-  /* Hero title responsive */
-  #heroTitle {
-    font-size: clamp(2rem, 8vw, 4rem);
-    line-height: 1.1;
-  }
-
-  .section-title {
-    font-size: clamp(2rem, 6vw, 3rem);
-  }
-}
-
-/* Tab content responsive fixes */
-.tab-content {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-/* Project cards responsive */
-.project-card {
-  max-width: 100%;
-  overflow: hidden;
-}
-
-/* Tech tags responsive */
-.tech-tag,
-.skill-tag {
-  font-size: clamp(0.7rem, 2.5vw, 0.875rem);
-  padding: 0.25rem 0.5rem;
 }
