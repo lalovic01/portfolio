@@ -55,6 +55,13 @@ window.addEventListener("scroll", () => {
   const sections = document.querySelectorAll("section[id]");
   const scrollPosition = window.scrollY + 100;
 
+  if (window.scrollY < 100) {
+    navLinks.forEach((link) => link.classList.remove("text-orange-500"));
+    const homeLink = document.querySelector('.nav-link[href="#home"]');
+    if (homeLink) homeLink.classList.add("text-orange-500");
+    return;
+  }
+
   sections.forEach((section) => {
     const sectionTop = section.offsetTop;
     const sectionHeight = section.offsetHeight;
@@ -319,6 +326,15 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
     if (target) {
       const headerHeight = document.querySelector("header").offsetHeight;
+
+      if (this.getAttribute("href") === "#home") {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+        return;
+      }
+
       const targetPosition = target.offsetTop - headerHeight - 20;
 
       window.scrollTo({
