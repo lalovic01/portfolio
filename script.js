@@ -566,26 +566,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  let autoPlayInterval;
-
-  function startAutoPlay() {
-    autoPlayInterval = setInterval(() => {
-      if (currentSlide >= getTotalPages() - 1) {
-        currentSlide = 0;
-      } else {
-        currentSlide++;
-      }
-      updateSlider();
-    }, 5000);
-  }
-
-  function stopAutoPlay() {
-    clearInterval(autoPlayInterval);
-  }
-
-  slider.addEventListener("mouseenter", stopAutoPlay);
-  slider.addEventListener("mouseleave", startAutoPlay);
-
   window.addEventListener("resize", () => {
     updateSlidesPerView();
     currentSlide = 0;
@@ -594,7 +574,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateSlidesPerView();
   updateSlider();
-  startAutoPlay();
 });
 
 window.addEventListener("load", () => {
