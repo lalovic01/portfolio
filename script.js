@@ -322,12 +322,48 @@ function loadProjectsWithAnimation() {
   }, 1500);
 }
 
+function adjustHeroSpacing() {
+  const header = document.querySelector("header");
+  const heroSection = document.getElementById("home");
+
+  if (header && heroSection) {
+    const headerHeight = header.offsetHeight;
+    const viewportHeight = window.innerHeight;
+    const isMobile = window.innerWidth <= 768;
+
+    let safePadding;
+
+    if (isMobile) {
+      safePadding = headerHeight + 40;
+      if (window.innerWidth <= 360) {
+        safePadding = headerHeight + 60;
+      }
+    } else {
+      safePadding = headerHeight + 20;
+    }
+
+    heroSection.style.paddingTop = `${safePadding}px`;
+
+    const heroAvatar = heroSection.querySelector(".hero-avatar");
+    if (heroAvatar && isMobile) {
+      heroAvatar.style.marginTop = "1.5rem";
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", adjustHeroSpacing);
+window.addEventListener("resize", adjustHeroSpacing);
+window.addEventListener("orientationchange", () => {
+  setTimeout(adjustHeroSpacing, 200);
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   loadingManager.showPageLoader();
 
   new ImageLoader();
 
   setTimeout(() => {
+    adjustHeroSpacing();
     loadingManager.hidePageLoader();
     loadSkillsWithAnimation();
     loadProjectsWithAnimation();

@@ -1001,36 +1001,85 @@ footer .social-link:hover {
 }
 
 #home {
-  padding-top: 5rem;
+  padding-top: 6rem; /* Base padding */
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 480px) {
   #home {
-    padding-top: 3rem;
+    padding-top: 8rem; /* More padding for small phones */
+    min-height: calc(100vh - 1rem);
+  }
+
+  .hero-avatar {
+    margin-top: 1rem; /* More space from header */
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (max-width: 390px) {
+  #home {
+    padding-top: 9rem; /* Even more padding for very small phones */
+  }
+
+  .hero-avatar {
+    margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  #home {
+    padding-top: 10rem;
+  }
+}
+
+@media (max-width: 414px) and (max-height: 896px) {
+  #home {
+    padding-top: 8.5rem;
+  }
+}
+
+@media (max-width: 375px) and (max-height: 812px) {
+  #home {
+    padding-top: 9rem;
+  }
+}
+
+@media (max-width: 375px) and (max-height: 667px) {
+  #home {
+    padding-top: 8rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  #home {
+    padding-top: 5rem;
+  }
+
+  .hero-avatar {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
   #home {
     padding-top: 4rem;
   }
 
   .hero-avatar {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1025px) {
   #home {
     padding-top: 3.5rem;
   }
 
   .hero-avatar {
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
   }
 }
 
@@ -1040,32 +1089,31 @@ footer .social-link:hover {
   position: relative;
 }
 
-@media (max-width: 640px) {
+@supports (padding-top: env(safe-area-inset-top)) {
   #home {
-    padding-top: 6rem;
-    min-height: calc(100vh - 2rem);
+    padding-top: calc(6rem + env(safe-area-inset-top));
   }
 
-  .hero-avatar {
-    margin-top: 0.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  #home {
-    padding-top: 5.5rem;
-  }
-
-  .hero-avatar {
-    margin-top: 0.25rem;
-  }
-
-  #home .text-center.max-w-4xl {
-    padding-top: 1rem;
+  @media (max-width: 480px) {
+    #home {
+      padding-top: calc(8rem + env(safe-area-inset-top));
+    }
   }
 }
 
 header {
   z-index: 50;
   height: auto;
+  min-height: 4rem;
+}
+
+@media (max-width: 480px) {
+  header {
+    min-height: 4.5rem;
+  }
+
+  header .container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
