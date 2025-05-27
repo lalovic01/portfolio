@@ -51,6 +51,14 @@
   transform: scale(1.1);
 }
 
+.social-link i {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover i {
+  transform: rotate(-15deg) scale(1.15);
+}
+
 .section-title {
   font-size: 3rem;
   font-weight: bold;
@@ -914,89 +922,31 @@ footer .social-link:hover {
   transform: translateY(0);
 }
 
-/* Progressive image loading */
-.image-container {
-  position: relative;
-  overflow: hidden;
-  background: #f3f4f6;
-}
-
-.dark .image-container {
-  background: #374151;
-}
-
-.image-placeholder {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-.dark .image-placeholder {
-  background: linear-gradient(90deg, #374151 25%, #4b5563 50%, #374151 75%);
-  background-size: 200% 100%;
-}
-
-.lazy-image {
+/* Fade-in animacija za sekcije */
+.fade-section {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.lazy-image.loaded {
+.fade-section.fade-in-visible {
   opacity: 1;
+  transform: translateY(0);
 }
 
-/* Contact form loading states */
-.contact-form-loading .form-input {
-  background: #f9f9f9;
-  pointer-events: none;
+.fade-section.fade-in-visible .content-fade-in {
+  animation: stagger-fade-in 0.6s ease-out forwards;
 }
 
-.dark .contact-form-loading .form-input {
-  background: #2d3748;
-}
-
-/* Mobile loading optimizations */
-@media (max-width: 640px) {
-  .loading-spinner {
-    width: 2rem;
-    height: 2rem;
-    border-width: 2px;
+@keyframes stagger-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .page-loading-spinner {
-    width: 3rem;
-    height: 3rem;
-    border-width: 3px;
-  }
-
-  .page-loading-logo {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .skeleton-avatar {
-    width: 4rem;
-    height: 4rem;
-  }
-}
-
-/* Pulse animation for loading states */
-.pulse-loading {
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-  0%,
-  100% {
+  to {
     opacity: 1;
-  }
-  50% {
-    opacity: 0.5;
+    transform: translateY(0);
   }
 }
 

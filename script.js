@@ -440,6 +440,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     switchToTab(workTab, workContent);
   }
+
+  const fadeSections = document.querySelectorAll(".fade-section");
+  if ("IntersectionObserver" in window) {
+    const fadeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("fade-in-visible");
+          } else {
+            entry.target.classList.remove("fade-in-visible");
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "-50px 0px",
+      }
+    );
+
+    fadeSections.forEach((section) => fadeObserver.observe(section));
+  } else {
+    fadeSections.forEach((section) => section.classList.add("fade-in-visible"));
+  }
 });
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
