@@ -573,9 +573,9 @@ html {
   margin-top: 0.25rem;
 }
 
-/* Missing social-link styles for footer and hero */
 .social-link {
   background: #f3f4f6;
+  color: #6b7280;
 }
 
 .dark .social-link {
@@ -583,7 +583,35 @@ html {
   color: #d1d5db;
 }
 
-/* Add missing animate-slide-in reset */
+footer .social-link {
+  background: #374151;
+  color: #d1d5db;
+  border: 1px solid #4b5563;
+}
+
+footer .social-link:hover {
+  background: #f97316;
+  color: white;
+  border-color: #f97316;
+  transform: scale(1.1);
+}
+
+#home .social-link {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.dark #home .social-link {
+  background: #374151;
+  color: #d1d5db;
+}
+
+#home .social-link:hover {
+  background: #f97316;
+  color: white;
+  transform: scale(1.1);
+}
+
 .animate-slide-in {
   opacity: 0;
   transform: translateX(30px);
